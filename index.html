@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8f0">
+  <meta name="description" content="Kejutan ulang tahun kecil berisi kue, musik, dan tiga surat spesial.">
+  <title>A Little Birthday Surprise ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="sparkles" aria-hidden="true"><span>✦</span><span>♡</span><span>✧</span><span>·</span><span>✦</span></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Kembali ke awal"><span class="brand-heart">♡</span> little happy things</a>
+    <div class="topbar-actions">
+      <label class="music-pick small-pick" for="songPicker" title="Pilih file lagu dari perangkatmu"><span aria-hidden="true">♫</span><span class="pick-label">Pilih lagu</span></label>
+      <button class="music-toggle" id="musicToggle" type="button" aria-label="Putar atau jeda musik" title="Putar atau jeda musik" disabled>▶</button>
+    </div>
+  </header>
+
+  <!-- Pilih file audio dari komputer/HP. Musik baru dimulai setelah halaman kue di-swipe. -->
+  <input id="songPicker" class="visually-hidden" type="file" accept="audio/*">
+  <audio id="birthdayAudio" preload="none" loop></audio>
+
+  <main id="top" class="app-shell">
+    <section id="introScreen" class="intro-screen screen is-visible" aria-labelledby="introTitle">
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> made with a little love</p>
+        <h1 id="introTitle">Satu kue kecil,<br><em>tiga surat spesial.</em></h1>
+        <p class="intro-description">Ada sesuatu yang disiapkan khusus untukmu. Tiup lilinnya dalam hati, lalu geser untuk membuka kejutan berikutnya.</p>
+        <div class="intro-chips" aria-label="Isi kejutan"><span>♡ birthday cake</span><span>♫ your song</span><span>✉ 3 little letters</span></div>
+      </div>
+
+      <div class="cake-panel">
+        <div class="cake-scribble scribble-left" aria-hidden="true">✦</div>
+        <div class="cake-scribble scribble-right" aria-hidden="true">♡</div>
+        <div class="cake-stage" aria-label="Ilustrasi kue ulang tahun biru dengan hiasan karakter kartun">
+          <div class="cake-shadow"></div>
+          <div class="cake-plate"></div>
+          <div class="cake">
+            <div class="cake-side">
+              <span class="cake-side-heart heart-a">♥</span><span class="cake-side-star star-a">✦</span>
+              <span class="cake-side-heart heart-b">♥</span><span class="cake-side-star star-b">✦</span>
+              <span class="cake-side-dot dot-a"></span><span class="cake-side-dot dot-b"></span><span class="cake-side-dot dot-c"></span>
+            </div>
+            <div class="cake-top">
+              <span class="cake-top-confetti confetti-a">✦</span><span class="cake-top-confetti confetti-b">♡</span><span class="cake-top-confetti confetti-c">✦</span>
+              <!-- Ilustrasi orisinal sederhana pada kue, dibuat sebagai SVG agar tetap tajam di semua ukuran. -->
+              <svg class="cake-character" viewBox="0 0 260 160" role="img" aria-label="Ilustrasi anak kartun memakai baju merah dan celana kuning">
+                <g stroke="#5b3432" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M81 111 Q56 105 41 85 Q34 77 42 72 Q49 69 58 78 L85 92" fill="#f5c7a2"/>
+                  <path d="M181 110 Q208 99 219 78 Q224 70 232 75 Q238 82 230 93 L205 119" fill="#f5c7a2"/>
+                  <path d="M95 108 L88 137 Q90 146 112 146 L127 139 L132 115" fill="#ffcf56"/>
+                  <path d="M132 115 L136 139 Q148 148 170 143 L170 112" fill="#ffcf56"/>
+                  <path d="M110 137 L108 151 M155 139 L160 151" fill="none"/>
+                  <path d="M80 86 Q72 104 86 123 Q107 137 143 127 Q171 124 184 104 L174 82 Z" fill="#e84c4c"/>
+                  <path d="M94 45 Q93 18 125 17 Q154 13 169 38 Q180 56 171 83 Q165 102 139 105 L111 100 Q88 87 91 65 Z" fill="#f5c7a2"/>
+                  <path d="M91 52 Q82 32 101 24 Q110 7 129 16 Q145 5 158 20 Q179 20 180 43 L168 53 Q165 34 152 34 Q144 47 128 43 Q113 51 103 39 L100 60 Z" fill="#25262d"/>
+                  <path d="M108 59 Q113 51 120 59" fill="none"/>
+                  <path d="M144 57 Q151 50 158 57" fill="none"/>
+                  <ellipse cx="116" cy="65" rx="6" ry="8" fill="#292a2e" stroke="none"/>
+                  <ellipse cx="150" cy="65" rx="6" ry="8" fill="#292a2e" stroke="none"/>
+                  <path d="M126 80 Q137 89 147 78" fill="none"/>
+                  <path d="M111 90 Q132 100 154 91" fill="none" stroke="#d9917f" stroke-width="3"/>
+                  <path d="M119 105 L128 118 L139 105" fill="#fff0df"/>
+                </g>
+              </svg>
+              <div class="candle"><span class="flame"></span></div>
+            </div>
+          </div>
+          <span class="cake-floating-heart floating-heart-one" aria-hidden="true">♡</span>
+          <span class="cake-floating-heart floating-heart-two" aria-hidden="true">✦</span>
+        </div>
+        <div class="cake-greeting">
+          <!-- GANTI UCAPAN DI BAWAH INI SESUAI KEINGINANMU -->
+          <p class="greeting-kicker">a special day for someone special</p>
+          <h2>Happy Birthday<span>!</span></h2>
+          <p class="greeting-message">Semoga hari ini penuh hal kecil yang bikin kamu tersenyum. ♡</p>
+        </div>
+      </div>
+
+      <div class="intro-bottom">
+        <div class="song-instruction"><span class="song-icon">♫</span><span id="songStatus">Pilih lagu favoritmu, lalu geser untuk memulai.</span></div>
+        <label class="music-pick main-pick" for="songPicker"><span aria-hidden="true">＋</span> Pilih lagu dari perangkat</label>
+        <button class="primary-button" id="openLettersButton" type="button">Buka surat <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="swipe-hint" aria-hidden="true"><span class="swipe-hint-line"></span> GESER KE KIRI <span class="swipe-arrow">↔</span></div>
+    </section>
+
+    <section id="letterExperience" class="letters-experience screen" aria-labelledby="lettersTitle" hidden>
+      <div class="letters-heading">
+        <p class="eyebrow"><span class="eyebrow-line"></span> sealed with a hug</p>
+        <h1 id="lettersTitle">Ada surat <em>untukmu.</em></h1>
+        <p class="letters-subtitle">Geser surat ke kiri untuk membuka halaman selanjutnya.</p>
+      </div>
+
+      <div class="letter-progress-row">
+        <span id="progressLabel">SURAT 01 / 03</span>
+        <div class="progress-track" aria-hidden="true"><span id="progressBar"></span></div>
+        <span class="progress-heart" aria-hidden="true">♡</span>
+      </div>
+
+      <div class="letter-stage" id="letterStage" aria-label="Tumpukan surat yang bisa digeser" tabindex="0">
+        <article class="letter-card theme-pony" data-index="0" aria-label="Surat pertama bertema My Little Pony">
+          <div class="letter-paper-texture" aria-hidden="true"></div>
+          <div class="letter-ornament ornament-top"><img src="assets/pony-referensi.jpg" alt="Ilustrasi Pinkie Pie dari gambar referensi" loading="lazy"></div>
+          <div class="letter-ornament ornament-bottom"><img src="https://freepngimg.com/thumb/my_little_pony/23649-9-pinkie-pie-image.png" alt="Pinkie Pie, kuda poni pink" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="letter-content">
+            <div class="letter-meta"><span>MY LITTLE PONY</span><span>♡ 01</span></div>
+            <div class="letter-divider"><span>✦</span></div>
+            <p class="letter-dear">dear aisa,</p>
+            <h2>For my little<br><em>party star.</em></h2>
+            <!-- GANTI ISI SURAT PERTAMA DI BAGIAN INI -->
+            <p class="letter-copy">happy 17th birthday, aisuy. 
+another year older, another year to make beautiful memories. semoga di umur yang baru ini brings you lots of happiness and good things, and countless little things that make you smile. you deserve all the good things in this world. aisa! love youu!</p>
+            <p class="letter-copy">enjoy your special day!</p>
+            <div class="letter-signoff"><span>with lots of love,</span><strong>Rani  ♡</strong></div>
+            <span class="letter-stamp" aria-hidden="true">PINK<br>♡<br>PIE</span>
+          </div>
+          <div class="letter-bottom-note">a tiny letter, a big wish <span>♡</span></div>
+        </article>
+
+        <article class="letter-card theme-tomato" data-index="1" aria-label="Surat kedua bertema Tomatoes Cat">
+          <div class="letter-paper-texture" aria-hidden="true"></div>
+          <div class="letter-ornament ornament-top tomato-top"><img src="assets/tomato-cat-referensi.jpg" alt="Kucing berbentuk tomat dari gambar referensi" loading="lazy"></div>
+          <div class="letter-ornament ornament-bottom tomato-bottom"><img src="assets/tomato-cat-referensi.jpg" alt="Dekorasi kucing tomat" loading="lazy"></div>
+          <div class="letter-content">
+            <div class="letter-meta"><span>TOMATOES CAT</span><span>♡ 02</span></div>
+            <div class="letter-divider"><span>🍅</span></div>
+            <p class="letter-dear">hello, aistut</p>
+            <h2>A little note<br><em>just for you.</em></h2>
+            <!-- GANTI ISI SURAT KEDUA DI BAGIAN INI -->
+            <p class="letter-copy">Happy Birthday Aisyah! May happiness always be with you on your 17th birthday! We all love you, and when you think you're alone, look back. We're always there waiting for you 💚🍀 maaf kalo selama ini belum jadi temen terbaik bagi kamu 🐇 Sehat sehat selalu Aistut!</p>
+            <p class="letter-copy">Big love for you.</p>
+            <div class="letter-signoff"><span>sending you a warm hug,</span><strong>Naaila ♡</strong></div>
+            <span class="letter-stamp tomato-stamp" aria-hidden="true">TOM<br>♡<br>ATO</span>
+          </div>
+          <div class="letter-bottom-note">soft days &amp; sweeter smiles <span>♡</span></div>
+        </article>
+
+        <article class="letter-card theme-dino" data-index="2" aria-label="Surat ketiga bertema dinosaurus">
+          <div class="letter-paper-texture" aria-hidden="true"></div>
+          <div class="letter-ornament ornament-top dino-top"><img src="assets/dino-referensi.jpg" alt="Dinosaurus hijau dari gambar referensi" loading="lazy"></div>
+          <div class="letter-ornament ornament-bottom dino-bottom"><img src="assets/dino-referensi.jpg" alt="Dekorasi dinosaurus hijau" loading="lazy"></div>
+          <div class="letter-content">
+            <div class="letter-meta"><span>DHINO MAIL</span><span>♡ 03</span></div>
+            <div class="letter-divider"><span>✧</span></div>
+            <p class="letter-dear">hey, tiny dinosaur!</p>
+            <h2>One last little<br><em>birthday wish.</em></h2>
+            <!-- GANTI ISI SURAT KETIGA DI BAGIAN INI -->
+            <p class="letter-copy">Dont give up plis,pasangan ideal nanti dia berubah kok, hbd yahhh</p>
+            <p class="letter-copy">maaf kalo kuenya jelek aku kesusahan design nya karna ini pertama kalinya aku buat kue, i hope your nasi selalu hangat, kalo mau post privat risky aku malas sama dia.</p>
+            <div class="letter-signoff"><span>rawr means lots of love,</span><strong>abanghz </strong></div>
+            <span class="letter-stamp dino-stamp" aria-hidden="true">DINO<br>♡<br>MAIL</span>
+          </div>
+          <div class="letter-bottom-note">you are dino-mite! <span>♡</span></div>
+        </article>
+      </div>
+
+      <div class="letter-controls">
+        <button class="secondary-button" id="previousLetterButton" type="button" disabled><span aria-hidden="true">←</span> Sebelumnya</button>
+        <div class="dots" id="letterDots" aria-label="Pilih surat">
+          <button class="dot-button is-current" type="button" aria-label="Surat 1" data-go="0"></button>
+          <button class="dot-button" type="button" aria-label="Surat 2" data-go="1"></button>
+          <button class="dot-button" type="button" aria-label="Surat 3" data-go="2"></button>
+        </div>
+        <button class="primary-button next-letter-button" id="nextLetterButton" type="button">Surat berikutnya <span aria-hidden="true">→</span></button>
+      </div>
+      <p class="letter-footnote"><span>✦</span> Tip: kamu juga bisa memakai tombol panah keyboard.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>made for a happy little day</span><span aria-hidden="true">♡</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
